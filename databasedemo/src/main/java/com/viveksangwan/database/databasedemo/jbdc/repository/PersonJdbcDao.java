@@ -1,6 +1,6 @@
-package com.viveksangwan.database.databasedemo.jbdc;
+package com.viveksangwan.database.databasedemo.jbdc.repository;
 
-import com.viveksangwan.database.databasedemo.entity.Person;
+import com.viveksangwan.database.databasedemo.jbdc.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,8 +1,15 @@
-package com.viveksangwan.database.databasedemo.entity;
+package com.viveksangwan.database.databasedemo.jpa.Entity;
+
+import jakarta.persistence.*;
 
 import java.util.Date;
 
-public class Person {
+@Entity
+//@Table(name="person"), Not required as table_name and class_name matches
+public class PersonJPA {
+    //@Column(name="id"), Not required as column_name and field_name matches
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String location;
@@ -18,7 +25,7 @@ public class Person {
                 '}';
     }
 
-    public Person() {
+    public PersonJPA() {
     }
 
     public int getId() {
@@ -53,7 +60,7 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-    public Person(int id, String name, String location, Date birthDate) {
+    public PersonJPA(int id, String name, String location, Date birthDate) {
         this.id = id;
         this.name = name;
         this.location = location;
