@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-//@Table(name="person"), Not required as table_name and class_name matches
+// @Table(name=""), Not required because class_name are table_name matches
+@NamedQuery(name="find_all_persons",query="select p from PersonJPA p")
 public class PersonJPA {
     //@Column(name="id"), Not required as column_name and field_name matches
     @Id
@@ -23,6 +24,12 @@ public class PersonJPA {
                 ", location='" + location + '\'' +
                 ", birthDate=" + birthDate +
                 '}';
+    }
+
+    public PersonJPA(String name, String location, Date birthDate) {
+        this.name = name;
+        this.location = location;
+        this.birthDate = birthDate;
     }
 
     public PersonJPA() {
